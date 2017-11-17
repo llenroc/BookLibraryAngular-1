@@ -1,7 +1,9 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PhoneBookComponent } from './phonebook/phonebook.component';
+
 import { ModalModule, TabsModule, TooltipModule } from 'ngx-bootstrap';
 import { AppCommonModule } from '@app/shared/common/app-common.module';
 import { UtilsModule } from '@shared/utils/utils.module';
@@ -23,7 +25,8 @@ import { EasyPieChartModule } from 'ng2modules-easypiechart';
         EasyPieChartModule
     ],
     declarations: [
-        DashboardComponent
+        DashboardComponent,
+        PhoneBookComponent
     ]
 })
 export class MainModule { }
