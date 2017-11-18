@@ -32,7 +32,8 @@ import * as ApiServiceProxies from './service-proxies';
         ApiServiceProxies.HostDashboardServiceProxy,
         ApiServiceProxies.PaymentServiceProxy,
         ApiServiceProxies.DemoUiComponentsServiceProxy,
-        ApiServiceProxies.SubscriptionServiceProxy
+        ApiServiceProxies.SubscriptionServiceProxy,
+        ApiServiceProxies.PersonServiceProxy
     ]
 })
 export class ServiceProxyModule { }

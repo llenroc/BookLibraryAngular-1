@@ -13,8 +13,19 @@
     <div class="portlet light margin-bottom-0">
         <div class="portlet-body">
 
-            <p>PHONE BOOK CONTENT COMES HERE!</p>
+           <h3>{{l("AllPeople")}}</h3>
 
+            <div class="list-group">
+                <a *ngFor="let person of people" href="javascript:;" class="list-group-item">
+                    <h4 class="list-group-item-heading">
+                        {{person.name+' '+person.surName}}
+                    </h4>
+
+                    <p class="list-group-item-text">
+                        {{person.emailAddress}}
+                    </p>
+                </a>
+            </div>
         </div>
     </div>
 
