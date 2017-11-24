@@ -10,7 +10,7 @@ import { PhoneBookComponent } from './phonebook/phonebook.component';
                 path: '',
                 children: [
                     { path: 'dashboard', component: DashboardComponent, data: { permission: 'Pages.Tenant.Dashboard' } },
-                    { path: 'phonebook', component: PhoneBookComponent }
+                    { path: 'phonebook', component: PhoneBookComponent, data: { permission: 'Pages.Tenant.PhoneBook' }}
                 ]
             }
         ])

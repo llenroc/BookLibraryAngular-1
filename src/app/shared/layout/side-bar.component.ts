@@ -22,7 +22,7 @@ export class SideBarComponent extends AppComponentBase {
     menu: SideBarMenu = new SideBarMenu("MainMenu", "MainMenu", [
         new SideBarMenuItem("Dashboard", "Pages.Administration.Host.Dashboard", "icon-home", "/app/admin/hostDashboard"),
         new SideBarMenuItem("Dashboard", "Pages.Tenant.Dashboard", "icon-home", "/app/main/dashboard"),
-        new SideBarMenuItem("PhoneBook",null,"icon-notebook","/app/main/phonebook"),
+        new SideBarMenuItem("PhoneBook","Pages.Tenant.PhoneBook","icon-notebook","/app/main/phonebook"),//20171124修改
         new SideBarMenuItem("Tenants", "Pages.Tenants", "icon-globe", "/app/admin/tenants"),
         new SideBarMenuItem("Editions", "Pages.Editions", "icon-grid", "/app/admin/editions"),
         new SideBarMenuItem("Administration", "", "icon-wrench", "", [
