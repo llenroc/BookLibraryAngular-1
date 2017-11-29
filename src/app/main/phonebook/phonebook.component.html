@@ -10,25 +10,45 @@
             </div>
         </div>
         <div class="col-xs-6 text-right">
-            <button class="btn btn-primary blue" (click)="createPersonModal.show()"><i class="fa fa-plus"></i> {{l("CreateNewPerson")}}</button>
+            <button *ngIf="isGranted('Pages.Tenant.PhoneBook.CreatePerson')" class="btn btn-primary blue" (click)="createPersonModal.show()"><i class="fa fa-plus"></i> {{l("CreateNewPerson")}}</button>
         </div>
 
     </div>
     <div class="portlet light margin-bottom-0">
         <div class="portlet-body">
 
-           <h3>{{l("AllPeople")}}</h3>
+            <h3>{{l("AllPeople")}}({{people.length}})</h3>
+            <form autocomplete="off">
+                <div class="m-form m-form--label-align-right">
+                    <div class="row align-items-center m--margin-bottom-10">
+                        <div class="col-xl-12">
+                            <div class="form-group m-form__group align-items-center">
+                                <div class="input-group">
+                                    <input [(ngModel)]="filterText" name="filter" autoFocus class="form-control m-input" [placeholder]="l('SearchWithThreeDot')" type="text">
+                                    <span class="input-group-btn">
+                                        <button (click)="getPeople()" class="btn btn-primary" type="submit"><i class="flaticon-search-1"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
 
-            <div class="list-group">
-                <a *ngFor="let person of people" href="javascript:;" class="list-group-item">
-                    <h4 class="list-group-item-heading">
-                        {{person.name+' '+person.surName}}
-                    </h4>
-
-                    <p class="list-group-item-text">
-                        {{person.emailAddress}}
-                    </p>
-                </a>
+            <div class="m-widget1">
+                <div class="m-widget1__item" *ngFor="let person of people">
+                    <div class="row m-row--no-padding align-items-center">
+                        <div class="col">
+                            <h3 class="m-widget1__title">{{person.name + ' ' + person.surname}}</h3>
+                            <span class="m-widget1__desc">{{person.emailAddress}}</span>
+                        </div>
+                        <div class="col m--align-right">
+                            <button id="deletePerson" (click)="deletePerson(person)" title="{{l('Delete')}}" class="btn btn-outline-danger m-btn m-btn--icon m-btn--icon-only m-btn--pill" href="javascript:;">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
