@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PhoneBookComponent } from './phonebook/phonebook.component';
 import { CreatePersonModalComponent } from './phonebook/create-person-modal.component';
+import { EditPersonModalComponent } from './phonebook/edit-person-modal.component';
+
 
 import { ModalModule, TabsModule, TooltipModule } from 'ngx-bootstrap';
 import { AppCommonModule } from '@app/shared/common/app-common.module';
@@ -28,7 +30,8 @@ import { EasyPieChartModule } from 'ng2modules-easypiechart';
     declarations: [
         DashboardComponent,
         PhoneBookComponent,
-        CreatePersonModalComponent
+        CreatePersonModalComponent,
+        EditPersonModalComponent
     ]
 })
 export class MainModule { }
